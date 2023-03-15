@@ -14,18 +14,21 @@ const App = () => {
     getWeather(value).then((data) => {
       setVal(data.data);
     });
+    setValue("");
   };
   useEffect(() => {
     getWeather(value || "london").then((data) => {
       setVal(data.data);
     });
   }, []);
-
+  // const onClear = () => {
+  //   setValue("");
+  // };
   return (
     <Box>
       <Container fixed>
-        <Grid container spacing={2} height={'100vh'} sx={{margin: 'auto'}}>
-          <Grid item xs={5} marginTop={'45vh'}>
+        <Grid container spacing={2} height={"100vh"} sx={{ margin: "auto" }}>
+          <Grid item xs={5} marginTop={"45vh"}>
             <form onSubmit={handleSubmit}>
               <input
                 className="input__text"
@@ -34,13 +37,13 @@ const App = () => {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
               />
-              <button type="submit" className="btn__search">
+              <button type="submit" className="btn__search" >
                 Search
               </button>
             </form>
           </Grid>
-          <Grid item xs={5} marginTop={'20vh'}>
-            <GetWeather value={val}/>
+          <Grid item xs={5} marginTop={"20vh"}>
+            <GetWeather value={val} />
           </Grid>
         </Grid>
       </Container>
