@@ -11,10 +11,13 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getWeather(value).then((data) => {
-      setVal(data.data);
-    });
-    setValue("");
+    if(value){
+      getWeather(value).then((data) => {
+        setVal(data.data);
+      });
+      setValue("");
+    }
+    
   };
   useEffect(() => {
     getWeather(value || "london").then((data) => {
@@ -27,8 +30,8 @@ const App = () => {
   return (
     <Box>
       <Container fixed>
-        <Grid container spacing={2} height={"100vh"} sx={{ margin: "auto" }}>
-          <Grid item xs={5} marginTop={"45vh"}>
+        <Grid container spacing={2} height={"100vh"} sx={{ margin: "auto" }} justifyContent={'space-between'}>
+          <Grid item xs={12}  md={6}  marginTop={{xs: '2vh' , md: '45vh'}} >
             <form onSubmit={handleSubmit}>
               <input
                 className="input__text"
@@ -42,7 +45,7 @@ const App = () => {
               </button>
             </form>
           </Grid>
-          <Grid item xs={5} marginTop={"20vh"}>
+          <Grid item xs={12} md={6} marginTop={{ xs: '-23vh', md: '20vh'}}>
             <GetWeather value={val} />
           </Grid>
         </Grid>

@@ -1,18 +1,15 @@
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
-  CardMedia,
   Stack,
   Typography,
 } from "@mui/material";
 
 const GetWeather = ({ value }) => {
-  console.log(value?.weather?.[0]?.description);
+  // console.log(value?.weather?.[0]?.description);
   // console.log(value?.main?.temp);
-  const { name, coord } = value;
-  const renderSwitch = value => {
+  const { name } = value;
+  const renderSwitch = (value) => {
     switch (value) {
       case "01":
         return "☀️";
@@ -38,37 +35,43 @@ const GetWeather = ({ value }) => {
   };
   // const {feels_like, humidity, pressure, temp, temp_max, temp_min}= value?.main
 
-  
   return (
     <Stack>
-      <Card>
-        <CardContent>
-          
-          {renderSwitch(value?.weather?.[0]?.icon.slice(0, 2))}
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+      <Card sx={{border: 'none', boxShadow:'none'}}>
+        <CardContent className="border__clas" >
+          <Typography fontSize={'150px'}>
+            {renderSwitch(value?.weather?.[0]?.icon.slice(0, 2))}
+          </Typography>
+
+          <Typography sx={{ fontSize: 18 }} fontWeight={'bold'} color="#11998e" gutterBottom>
             {name}
           </Typography>
           <Typography
             variant="h5"
-            sx={{ textTransform: "capitalize" }}
+            sx={{ textTransform: "capitalize", fontSize: '30px' }}
             component="div"
+            fontWeight={'bold'}
+            color={'#11998e'}
           >
             {value?.weather?.[0]?.description}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="#11998e">
             Feels_like: {value?.main?.feels_like}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="#11998e">
             Humidity: {value?.main?.humidity}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="#11998e">
             Temp: {value?.main?.temp}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="#11998e">
             Temp_max: {value?.main?.temp_max}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="#11998e">
             Temp_min: {value?.main?.temp_min}
+          </Typography>
+          <Typography fontWeight={'bold'} color={'#11998e'}>
+            Wind speed: {value?.wind?.speed}
           </Typography>
         </CardContent>
         {/* <CardActions>
