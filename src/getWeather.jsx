@@ -4,7 +4,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-
+// import background from "./assets/pngwing.com.png";
 const GetWeather = ({ value }) => {
   // console.log(value?.weather?.[0]?.description);
   // console.log(value?.main?.temp);
@@ -37,8 +37,8 @@ const GetWeather = ({ value }) => {
 
   return (
     <Stack>
-      <Card sx={{border: 'none', boxShadow:'none'}}>
-        <CardContent className="border__clas" >
+      <Card className="border__clas" sx={{borderRadius: '30px' }} >
+        <CardContent>
           <Typography fontSize={'150px'}>
             {renderSwitch(value?.weather?.[0]?.icon.slice(0, 2))}
           </Typography>

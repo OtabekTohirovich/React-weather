@@ -3,6 +3,7 @@ import { config } from "../config";
 
 const apiKey = config.apiKey;
 
+
 export const getWeather = (city) => {
   let url = `${config.baseURL}weather`;
   return axios.get(url, {
