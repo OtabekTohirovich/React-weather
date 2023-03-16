@@ -39,7 +39,7 @@ const App = () => {
           sx={{ margin: "auto" }}
           justifyContent={"space-between"}
         >
-          <Grid item xs={12} md={6} marginTop={{ xs: "2vh", md: "45vh" }}>
+          <Grid item xs={12} md={6} marginTop={{ xs: "2vh", md: "45vh" }} >
             <form onSubmit={handleSubmit}>
               <input
                 className="input__text"
@@ -53,7 +53,7 @@ const App = () => {
               </button>
             </form>
           </Grid>
-          <Grid item xs={12} md={6} marginTop={{ xs: "-23vh", md: "20vh" }} padding='0'>
+          <Grid item xs={12} md={6} marginTop={{ xs: "-43vh", md: "20vh" }} padding='0'>
             <GetWeather value={val} />
           </Grid>
         </Grid>

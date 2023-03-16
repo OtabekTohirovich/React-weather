@@ -37,40 +37,40 @@ const GetWeather = ({ value }) => {
 
   return (
     <Stack>
-      <Card className="border__clas" sx={{borderRadius: '30px' }} >
+      <Card className="border__clas bgs" sx={{borderRadius: '30px' }}>
         <CardContent>
-          <Typography fontSize={'150px'}>
+          <Typography fontSize={{xs: '80px', md: '150px'}}>
             {renderSwitch(value?.weather?.[0]?.icon.slice(0, 2))}
           </Typography>
 
-          <Typography sx={{ fontSize: 18 }} fontWeight={'bold'} color="#11998e" gutterBottom>
+          <Typography sx={{ fontSize: {xs: 12, md: 18} }} fontWeight={'bold'} color="#12425d" gutterBottom>
             {name}
           </Typography>
           <Typography
             variant="h5"
-            sx={{ textTransform: "capitalize", fontSize: '30px' }}
+            sx={{ textTransform: "capitalize", fontSize: {xs: 18, md: 28} }}
             component="div"
             fontWeight={'bold'}
-            color={'#11998e'}
+            color={'#12425d'}
           >
             {value?.weather?.[0]?.description}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="#11998e">
+          <Typography sx={{ mb: 1.5 , fontSize: {xs: 12, md: 18}}} color="#12425d">
             Feels_like: {value?.main?.feels_like}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="#11998e">
+          <Typography sx={{ mb: 1.5 , fontSize: {xs: 12, md: 18}}} color="#12425d">
             Humidity: {value?.main?.humidity}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="#11998e">
+          <Typography sx={{ mb: 1.5 , fontSize: {xs: 12, md: 18}}} color="#12425d">
             Temp: {value?.main?.temp}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="#11998e">
+          <Typography sx={{ mb: 1.5 , fontSize: {xs: 12, md: 18}}} color="#12425d">
             Temp_max: {value?.main?.temp_max}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="#11998e">
+          <Typography sx={{ mb: 1.5 , fontSize: {xs: 12, md: 18}}} color="#12425d">
             Temp_min: {value?.main?.temp_min}
           </Typography>
-          <Typography fontWeight={'bold'} color={'#11998e'}>
+          <Typography fontWeight={'bold'} color={'#12425d'} sx={{fontSize: {xs: 12, md: 18}}}>
             Wind speed: {value?.wind?.speed}
           </Typography>
         </CardContent>

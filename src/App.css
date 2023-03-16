@@ -15,40 +15,46 @@
   touch-action: manipulation;
   background: linear-gradient(to right, #11998e, #38ef7d);
   border: none;
+  font-size: 12px;
   border-radius: 1rem;
   justify-content: center;
   padding: 0.4em 1.4em 0.5em 1.1em;
   font-family: inherit;
-  font-size: 16px;
   font-weight: 500;
   box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
 }
 
 .input__text {
-  font-size: 16px;
+  font-size: 12px;
   border: 2px solid #11998e;
   padding: 0.4em 1.4em 0.5em 1.1em;
   border-radius: 1.2rem;
   margin-right: 10px;
 }
 .input__text:focus {
-  outline: none ;
+  outline: none;
   border-color: #719ece;
   box-shadow: 0 0 10px #719ece;
 }
 .border__clas {
-  border: 3px solid #11998e;
+  border: 3px solid #12425d;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 25px;
 }
 
-/* @media only screen and (max-width: 400px) {
-  .responsive {
-    max-height: 10px;
+.bgs {
+  background: rgb(20,221,167);
+  background: linear-gradient(90deg, rgba(20,221,167,0.4514180672268907) 0%, rgba(255,255,255,1) 49%, rgba(154,240,242,0.4514180672268907) 84%);
+}
+
+@media only screen and (min-width: 600px) {
+  .input__text {
+  font-size: 16px;
   }
-  .respon {
-    margin-top: -500px;
+
+  .btn__search {
+    font-size: 16px;
   }
-} */
+}
